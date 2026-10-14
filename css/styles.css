@@ -31,6 +31,7 @@ body {
   color: whitesmoke; /*for all the type in the document*/
   text-shadow: 1px 2px 2px /*third value = blur*/ black;
   background-color: silver;
+  margin: 0;
 }
 header {
   position: sticky;
@@ -49,8 +50,7 @@ marquee {
   border-bottom: 2px solid mediumaquamarine;
 }
 main {
-  padding: 0;
-  margin: 1rem;
+  padding: 1rem;
   z-index: 0;
   height: 100%;
   scrollbar-width: auto;
