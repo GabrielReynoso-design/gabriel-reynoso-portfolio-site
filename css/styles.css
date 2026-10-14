@@ -410,7 +410,7 @@ iframe {
     backdrop-filter: blur(16px);
   }
   main {
-    padding-inline: clamp(1rem, 20vw, 50vw);
+    padding-inline: 20vw;
     height: 100%;
     z-index: 0;
     overflow-y: scroll;
