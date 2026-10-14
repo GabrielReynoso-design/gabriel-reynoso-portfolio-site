@@ -67,7 +67,6 @@ footer {
 nav ul,
 footer ul {
   display: flex;
-  gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -413,7 +412,7 @@ iframe {
     backdrop-filter: blur(16px);
   }
   main {
-    margin-inline: clamp(5vw, 20vw, 50vw);
+    padding-inline: clamp(1rem, 20vw, 50vw);
     height: 100%;
     z-index: 0;
     overflow-y: scroll;
