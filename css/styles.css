@@ -65,7 +65,6 @@ footer {
   font-size: 1rem;
   text-transform: uppercase;
   z-index: 0;
-  width: 100%;
 }
 nav ul,
 footer ul {
@@ -388,6 +387,9 @@ iframe {
   /* desktop-first mobile breakpoint */
   html {
     font-size: 12pt;
+  }
+  body {
+    margin-inline: 1rem;
   }
   main {
     margin-inline: 1rem;
