@@ -64,7 +64,7 @@ footer {
   font-family: "Tektur", sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
-  z-index: 0;
+  z-index: 1;
 }
 nav ul,
 footer ul {
@@ -228,7 +228,7 @@ img {
 section {
   margin: 1rem 0 2rem;
   border: 4px outset silver;
-  padding: 1rem 3rem 3rem;
+  padding: 1rem 1.5rem 3rem;
   backdrop-filter: blur(16px);
 }
 /*font stuff*/
@@ -388,9 +388,6 @@ iframe {
   html {
     font-size: 12pt;
   }
-  body {
-    margin-inline: 1rem;
-  }
   main {
     margin-inline: 1rem;
     padding-inline: 0;
@@ -402,11 +399,25 @@ iframe {
   }
   nav a,
   footer a {
-    border: none;
-    padding: 1rem;
+    padding: 0;
+    border-radius: 0;
     margin: 0.5rem;
+    box-shadow: none;
+    border: none;
+    white-space: nowrap;
+  }
+  nav ul,
+  footer ul {
+    border: none;
+  }
+  #logo {
+    display: none;
   }
   .projectlinks {
     grid-template-columns: auto;
+  }
+  p {
+    text-justify: none;
+    text-align: start;
   }
 }
