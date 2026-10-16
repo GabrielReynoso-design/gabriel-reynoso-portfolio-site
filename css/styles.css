@@ -65,12 +65,12 @@ footer {
   font-size: 1rem;
   text-transform: uppercase;
   z-index: 0;
+  width: 100%;
 }
 nav ul,
 footer ul {
   border: 4px outset silver;
   display: flex;
-  gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
