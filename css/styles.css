@@ -9,10 +9,14 @@ html {
 #page {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 20rem 1fr;
   grid-template-areas:
-    "header"
-    "main"
-    "footer";
+    "header header"
+    "main main"
+    "footer footer";
+  gap: 1rem;
+  height: 100vh;
+  width: 100vw;
 }
 /*#page > selectors are for grid layout*/
 #page > header {
@@ -29,8 +33,6 @@ body {
   color: whitesmoke; /*for all the type in the document*/
   text-shadow: 1px 2px 2px /*third value = blur*/ black;
   background-color: silver;
-  margin: 0;
-  padding: 0;
 }
 header {
   position: sticky;
@@ -49,9 +51,10 @@ marquee {
   border-bottom: 2px solid mediumaquamarine;
 }
 main {
-  padding: 1rem;
-  z-index: 0;
+  padding-inline: clamp(5vw, 20vw, 50vw);
   height: 100%;
+  z-index: 0;
+  overflow-y: scroll;
   scrollbar-width: auto;
   scrollbar-color: silver;
 }
@@ -65,7 +68,9 @@ footer {
 }
 nav ul,
 footer ul {
+  border: 4px outset silver;
   display: flex;
+  gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -219,9 +224,10 @@ img {
   transform: scaleX(-1);
 }
 section {
-  margin: 0;
-  border: none;
-  padding: 0;
+  margin: 1rem 0 2rem;
+  border: 4px outset silver;
+  padding: 1rem 3rem 3rem;
+  backdrop-filter: blur(16px);
 }
 /*font stuff*/
 h1 {
@@ -305,14 +311,14 @@ blockquote {
   perspective: 2500px;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 }
 .card {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/3;
   text-decoration: none;
   color: inherit;
   background-color: mediumaquamarine;
@@ -375,45 +381,27 @@ iframe {
   height: auto;
   aspect-ratio: 16 / 9;
 }
-@media (min-width: 600px) {
-  /* mobile-first desktop breakpoint */
-  #page {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 20rem 1fr;
-    grid-template-areas:
-      "header header"
-      "main main"
-      "footer footer";
-    gap: 1rem;
-    height: 100vh;
-  }
-  .projectlinks {
-    perspective: 2500px;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-  }
-  body {
-    margin: 0 0.5rem;
-  }
-  nav ul {
-    border: 4px outset silver;
-  }
-  footer {
-    border: 4px outset silver;
-  }
-  section {
-    margin: 1rem 0 2rem;
-    border: 4px outset silver;
-    padding: 1rem 3rem 3rem;
-    backdrop-filter: blur(16px);
+@media (max-width: 600px) {
+  /* desktop-first mobile breakpoint */
+  html {
+    font-size: 12pt;
   }
   main {
-    padding-inline: clamp(1rem, 20vw, 50vw);
-    height: 100%;
-    z-index: 0;
-    overflow-y: scroll;
+    margin-inline: 1rem;
+    padding-inline: 0;
+  }
+  section {
+    border: 2px outset silver;
+    margin: 1rem 0.5rem 2rem;
+    padding: 0.5rem 1rem 2rem;
+  }
+  nav a,
+  footer a {
+    border: none;
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  .projectlinks {
+    grid-template-columns: auto;
   }
 }
